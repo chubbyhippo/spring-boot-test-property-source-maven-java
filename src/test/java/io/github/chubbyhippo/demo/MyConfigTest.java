@@ -5,10 +5,15 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
+import org.springframework.test.context.TestPropertySource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest
+@SpringBootTest(classes = MyConfig.class)
+@TestPropertySource(properties = """
+        my.config.name=55555
+        my.config.port=8080
+        """)
 class MyConfigTest {
 
     @Autowired
