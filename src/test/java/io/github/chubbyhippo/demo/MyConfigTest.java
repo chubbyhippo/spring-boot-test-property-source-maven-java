@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(classes = MyConfig.class)
 @TestPropertySource(properties = """
-        my.config.name=55555
+        my.config.name=configname
         my.config.port=8080
         """)
 class MyConfigTest {
